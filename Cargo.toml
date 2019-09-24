@@ -1,0 +1,7 @@
+[package]
+name = "SimpleHttpServer"
+version = "0.1.0"
+authors = ["uoo38"]
+edition = "2018"
+
+[dependencies]
