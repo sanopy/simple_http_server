@@ -1,11 +1,11 @@
 use std::io;
 use std::io::prelude::*;
-use std::str;
 use std::net::{TcpListener, TcpStream};
+use std::str;
 
 fn handle_client(mut stream: TcpStream) -> io::Result<()> {
     let mut buffer = [0; 1024];
-    stream.read_exact(&mut buffer)?;
+    stream.read(&mut buffer)?;
     let s = match str::from_utf8(&buffer) {
         Ok(v) => v,
         Err(e) => panic!("Invalid UTF-8 sequence: {}", e),
